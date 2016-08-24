@@ -9,9 +9,9 @@
 
 <h2>Equipo: Freelancer</h2>
 <ul>
-  <li><b id="current_grade"></b><li>
-  <li><b id="participants"></b><li>
-  <li><b id="description"></b><li>
+  <li><b id="current_grade"></b></li>
+  <li><b id="participants"></b></li>
+  <li><b id="description"></b></li>
 </ul>
 
 <h3>Desglose de puntos</h3>
@@ -33,6 +33,7 @@ var authenticationSuccess = function() {
       var nums_sum = 0.0
       var integrantes = 4.0
       var description = "Manjeo de proveedores y compra de cafe"
+      var tech = ".NET, Bootstrap"
       for(i=0;i<data.length;i++)
       {
         names.push(data[i].name)
@@ -62,7 +63,8 @@ var authenticationSuccess = function() {
       str_grades_append+="<tr><td><b>Total para cada alumno alumno:</b></td><td><b>"+(nums_sum/integrantes)+"/100</b></td></tr>"
       $("#current_grade").append("Nota actual para cada alumno (puntos oro): "+(nums_sum/integrantes) +"%");
       $("#participants").append(integrantes +" integrantes en el grupo");
-      $("#description").append(description);
+      $("#description").append("Descripcion del proyecto:"+description);
+      $("#tech").append("Tecnologia usada:"+tech);
       $("#grades").append(str_grades_append);
       $("#progress").append("<progress value='"+(nums_sum/integrantes)+"' max='100'>");
     },
