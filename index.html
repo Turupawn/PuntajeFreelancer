@@ -1,0 +1,28 @@
+<p>tra</p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://trello.com/1/client.js?key=ae3ab7813e41fff4df3f0760bb7bda88"></script>
+
+<script>
+
+var authenticationSuccess = function() {
+console.log("success");
+    $.get("https://trello.com/b/6PnbK6NW/freelancing-cocodrilo.json?cards=visible", function(data, status){
+        Console.log(status);
+    });
+};
+var authenticationFailure = function() {
+console.log("fail");
+};
+
+Trello.authorize({
+  type: 'popup',
+  name: 'Getting Started Application',
+  scope: {
+    read: 'true',
+    write: 'true' },
+  expiration: 'never',
+  success: authenticationSuccess,
+  error: authenticationFailure
+});
+
+</script>
