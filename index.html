@@ -13,6 +13,18 @@ var authenticationSuccess = function() {
       for(i=0;i<data.length;i++)
       {
         names.push(data[i].name)
+        j=data[i].name.length-1
+        while(data[i].name[j]!=' ')
+        {
+          j--
+        }
+        j++
+        var str_num=""
+        for(;j<data[i].name.length;j++)
+        {
+          str_num+=data[i].name[j]
+        }
+        console.log(str_num)
       }
       for(i=0;i<names.length;i++)
       {
