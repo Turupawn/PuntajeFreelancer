@@ -11,7 +11,18 @@ console.log("success");
     {
         Console.log(status);
     });
-};
+
+Trello.get("https://api.trello.com/1/lists/578edee4186e115ff4b04ce6/cards?key=ae3ab7813e41fff4df3f0760bb7bda88",
+  function()
+  {
+  Console.log("a");
+  }
+,
+  function()
+  {
+  Console.log("a");
+  }
+)};
 var authenticationFailure = function() {
 console.log("fail");
 };
