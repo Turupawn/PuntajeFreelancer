@@ -5,39 +5,33 @@
 <script>
 
 var authenticationSuccess = function() {
-console.log("success");
-    //$.get("https://trello.com/b/6PnbK6NW/freelancing-cocodrilo.json?cards=visible", function(data, status){
-/*
-    $.get("https://api.trello.com/1/lists/578edee4186e115ff4b04ce6/cards?key=ae3ab7813e41fff4df3f0760bb7bda88", function(data, status)
+  console.log("success");
+
+  Trello.get("/lists/578edee4186e115ff4b04ce6/cards",
+    function(data)
     {
-        console.log(status);
-    });
-*/
+      console.log(data[0].name);
+      console.log(data[1].name);
+      console.log(data[2].name);
+    },
+    function()
+    {
+      console.log("errorcit");
+    }
+  )};
 
-Trello.get("/lists/578edee4186e115ff4b04ce6/cards",
-  function(data)
-  {
-  console.log(data);
-  }
-,
-  function()
-  {
-  console.log("errorcit");
-  }
-)};
-var authenticationFailure = function() {
-console.log("fail");
-};
+  var authenticationFailure = function() {
+    console.log("fail");
+  };
 
-Trello.authorize({
-  type: 'popup',
-  name: 'Getting Started Application',
-  scope: {
-    read: 'true',
-    write: 'true' },
-  expiration: 'never',
-  success: authenticationSuccess,
-  error: authenticationFailure
-});
-
+  Trello.authorize({
+    type: 'popup',
+    name: 'Getting Started Application',
+    scope: {
+      read: 'true',
+      write: 'true' },
+    expiration: 'never',
+    success: authenticationSuccess,
+    error: authenticationFailure
+  });
 </script>
