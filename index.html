@@ -5,14 +5,19 @@
 <script>
 
 var authenticationSuccess = function() {
-  console.log("success");
 
   Trello.get("/lists/578edee4186e115ff4b04ce6/cards",
     function(data)
     {
-      console.log(data[0].name);
-      console.log(data[1].name);
-      console.log(data[2].name);
+      var names[]
+      for(i=0;i<data.length;i++)
+      {
+        names.push(data[i].name)
+      }
+      for(i=0;i<names.length;i++)
+      {
+        console.log(names[i]);
+      }
     },
     function()
     {
