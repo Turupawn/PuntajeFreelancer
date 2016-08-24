@@ -14,7 +14,7 @@ console.log("success");
     });
 */
 
-Trello.get("https://api.trello.com/1/lists/578edee4186e115ff4b04ce6/cards?key=ae3ab7813e41fff4df3f0760bb7bda88",
+Trello.get("/1/lists/578edee4186e115ff4b04ce6/cards",
   function()
   {
   console.log("a");
@@ -22,7 +22,7 @@ Trello.get("https://api.trello.com/1/lists/578edee4186e115ff4b04ce6/cards?key=ae
 ,
   function()
   {
-  console.log("a");
+  console.log("b");
   }
 )};
 var authenticationFailure = function() {
