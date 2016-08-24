@@ -9,7 +9,7 @@ var authenticationSuccess = function() {
   Trello.get("/lists/578edee4186e115ff4b04ce6/cards",
     function(data)
     {
-      var names[]
+      var names = []
       for(i=0;i<data.length;i++)
       {
         names.push(data[i].name)
@@ -21,7 +21,7 @@ var authenticationSuccess = function() {
     },
     function()
     {
-      console.log("errorcit");
+      console.log("errorcito");
     }
   )};
 
