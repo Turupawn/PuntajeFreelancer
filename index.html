@@ -15,14 +15,14 @@ console.log("success");
 */
 
 Trello.get("/lists/578edee4186e115ff4b04ce6/cards",
-  function()
+  function(data)
   {
-  console.log("a");
+  console.log(data);
   }
 ,
   function()
   {
-  console.log("b");
+  console.log("errorcit");
   }
 )};
 var authenticationFailure = function() {
