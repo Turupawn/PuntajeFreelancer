@@ -10,6 +10,7 @@ var authenticationSuccess = function() {
     function(data)
     {
       var names = []
+      var nums = []
       for(i=0;i<data.length;i++)
       {
         names.push(data[i].name)
@@ -24,11 +25,15 @@ var authenticationSuccess = function() {
         {
           str_num+=data[i].name[j]
         }
-        console.log(str_num)
+        nums.push(parseFloat(str_num))
       }
       for(i=0;i<names.length;i++)
       {
         console.log(names[i]);
+      }
+      for(i=0;i<names.length;i++)
+      {
+        console.log(nums[i]);
       }
     },
     function()
