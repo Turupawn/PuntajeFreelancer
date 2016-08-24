@@ -7,6 +7,9 @@
 
 <h3 id="current_grade"></h3>
 
+<table id="grades">
+</table>
+
 <script>
 
 var authenticationSuccess = function() {
@@ -33,16 +36,17 @@ var authenticationSuccess = function() {
         }
         nums.push(parseFloat(str_num))
       }
+      var str_grades_append=""
       for(i=0;i<names.length;i++)
       {
-        console.log(names[i]);
-      }
-      for(i=0;i<names.length;i++)
-      {
-        console.log(nums[i]);
+        str_grades_append+="<tr>"
+        str_grades_append+="<td>"+names[i]+"</td>"
+        str_grades_append+="<td>"+nums[i]+"</td>"
+        str_grades_append+="</tr>"
         nums_sum+=nums[i]
       }
       $("#current_grade").append("Nota final: "+nums_sum);
+      $("#grades").append(str_grades_append);
     },
     function()
     {
