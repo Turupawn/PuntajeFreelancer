@@ -1,7 +1,11 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.1.0/milligram.min.css">
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://trello.com/1/client.js?key=ae3ab7813e41fff4df3f0760bb7bda88"></script>
 
-<h1>Desglose de evaluacion de Ing. de Software</h1>
+<h1>Desglose de evaluación de Ing. de Software</h1>
 
 <h2>Equipo: Freelancer</h2>
 
@@ -20,6 +24,7 @@ var authenticationSuccess = function() {
       var names = []
       var nums = []
       var nums_sum = 0.0
+      var integrantes = 4.0
       for(i=0;i<data.length;i++)
       {
         names.push(data[i].name)
@@ -45,7 +50,9 @@ var authenticationSuccess = function() {
         str_grades_append+="</tr>"
         nums_sum+=nums[i]
       }
-      $("#current_grade").append("Nota final: "+nums_sum);
+      str_grades_append+="<tr><td><b>Total grupal:</b></td><td><b>"+nums_sum+"/"+(100*integrantes)+"</b></td></tr>"
+      str_grades_append+="<tr><td><b>Total para cada alumno alumno:</b></td><td><b>"+nums_sum+"/100</b></td></tr>"
+      $("#current_grade").append("Nota actual por alumno: "+(nums_sum/integrantes));
       $("#grades").append(str_grades_append);
     },
     function()
