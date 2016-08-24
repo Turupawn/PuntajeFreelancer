@@ -14,6 +14,8 @@
 <table id="grades">
 </table>
 
+<div id="progress"></div>
+
 <script>
 
 var authenticationSuccess = function() {
@@ -51,9 +53,10 @@ var authenticationSuccess = function() {
         nums_sum+=nums[i]
       }
       str_grades_append+="<tr><td><b>Total grupal:</b></td><td><b>"+nums_sum+"/"+(100*integrantes)+"</b></td></tr>"
-      str_grades_append+="<tr><td><b>Total para cada alumno alumno:</b></td><td><b>"+nums_sum+"/100</b></td></tr>"
+      str_grades_append+="<tr><td><b>Total para cada alumno alumno:</b></td><td><b>"+(nums_sum/integrantes)+"/100</b></td></tr>"
       $("#current_grade").append("Nota actual por alumno: "+(nums_sum/integrantes));
       $("#grades").append(str_grades_append);
+      $("#progress").append("<progress value='"+(nums_sum/integrantes)+"' max='100'>");
     },
     function()
     {
